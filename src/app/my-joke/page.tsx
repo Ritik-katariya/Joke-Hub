@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import JokeComponent from "@/components/jokes/JokeCompo";
+import JokeComponent from "@/components/jokes-page/JokeCompo";
 
 export default function MyJokes() {
   const [joke, setJoke] = useState<any>(null);

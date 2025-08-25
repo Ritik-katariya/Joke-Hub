@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import JokeComponent from "./JokeCompo";
 
-export default function Jokes() {
+export default function JokesPage() {
   const [joke, setJoke] = useState<any>(null);
   const [selectedType, setSelectedType] = useState("programming");
   const [loading, setLoading] = useState(false);
