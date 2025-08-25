@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { connectDB as dbConnect } from "@/lib/monogdb";
 import Joke from "@/lib/models/Joke";
