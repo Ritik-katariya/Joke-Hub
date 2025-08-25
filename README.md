@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jokes Hub
+
+Jokes Hub is a full-stack web application built with [Next.js](https://nextjs.org/) that allows users to view, create, and browse programming and general jokes. It features a modern UI, joke type selection, and persistent storage using MongoDB.
+
+## Features
+
+- Browse random jokes by type (Programming, General, Knock-Knock, Dad)
+- Create and submit your own jokes
+- View jokes stored in the database
+- Responsive and modern UI with Tailwind CSS
+- API endpoints for fetching and creating jokes
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/)
+- [Axios](https://axios-http.com/) for HTTP requests
+- [Tailwind CSS](https://tailwindcss.com/) for styling
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18+ recommended)
+- MongoDB database (local or cloud)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/your-username/joke-hub.git
+   cd joke-hub
+   ```
 
-## Learn More
+2. **Install dependencies:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set up environment variables:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Create a `.env.local` file in the root directory and add your MongoDB URI:
 
-## Deploy on Vercel
+   ```
+   MONGODB_URI=your-mongodb-connection-string
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+- `src/app/` - Next.js app directory (pages, API routes)
+- `src/components/` - React components (Joke display, Header, Footer, etc.)
+- `src/lib/` - Database models and connection logic
+- `public/` - Static assets
+
+## API Endpoints
+
+- `GET /api/jokes?type=programming` - Get a random joke of a specific type from the database
+- `POST /api/jokes` - Create a new joke (JSON body: `{ setup, punchline, type }`)
+- `GET /api/jokes/random` - Get a random joke from the database
+
+## Customization
+
+- Add more joke types by editing the `jokeTypes` array in the relevant components.
+- Update the UI by modifying components in `src/components/`.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Made with ❤️ using Next.js and Vercel
