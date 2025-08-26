@@ -7,11 +7,11 @@ export default function CreateJoke() {
   const [punchline, setPunchline] = useState("He kept calling it bytecoin and didn't get any.");
   const [type, setType] = useState('programming');
   const [message, setMessage] = useState('');
-
+const BaseUrl=process.env.NEXT_PUBLIC_BASE_URL|| "http://localhost:3000";
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('/api/jokes', { setup, punchline, type });
+      await axios.post(`${BaseUrl}/api/jokes`, { setup, punchline, type });
       setMessage('Joke created successfully!');
     } catch (error) {
       setMessage('Error creating joke.');
